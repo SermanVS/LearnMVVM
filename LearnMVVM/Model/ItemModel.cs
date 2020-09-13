@@ -16,7 +16,7 @@ namespace LearnMVVM.Model
             itemB = new Item(_valueB);
             result = new Item(_valueA + _valueB);
         }
-        public void getSumOf(Item itemA, Item itemB)
+        public void setResultAsSumOf(Item itemA, Item itemB)
         {
             result.setValue(itemA.getValue() + itemB.getValue());
         }

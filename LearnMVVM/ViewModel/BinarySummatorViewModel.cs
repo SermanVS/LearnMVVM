@@ -24,7 +24,7 @@ namespace LearnMVVM.ViewModel
         }
         public void ComputeResult()
         {
-            itemModel.getSumOf(itemModel.itemA, itemModel.itemB);
+            itemModel.setResultAsSumOf(itemModel.itemA, itemModel.itemB);
             OnPropertyChanged();
             OnPropertyChanged(nameof(DisplayMessage));
         }

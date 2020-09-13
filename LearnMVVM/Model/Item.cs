@@ -21,11 +21,5 @@ namespace LearnMVVM.Model
         {
             this.value = _value;
         }
-        
-        public Item getAsSumOf(Item valueA, Item valueB)
-        {
-            this.setValue(valueA.getValue() + valueB.getValue());
-            return this;
-        }
     }
 }
