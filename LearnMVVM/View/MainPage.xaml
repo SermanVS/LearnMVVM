@@ -15,6 +15,6 @@
 
             <Label Text="{Binding DisplayMessage}"/>
 
-            <Button Text="Get result" Command="{Binding GetResCommand}" />
+            <Button Text="Get result" Command="{Binding ComputeResultCommand}" />
      </StackLayout>
 </ContentPage>

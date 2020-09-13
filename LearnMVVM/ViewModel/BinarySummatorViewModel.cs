@@ -10,12 +10,10 @@ namespace LearnMVVM.ViewModel
 {
     class BinarySummatorViewModel : INotifyPropertyChanged
     {
-        ItemModel itemA = new ItemModel();
-        ItemModel itemB = new ItemModel();
-        ItemModel result = new ItemModel();
+        ItemModel itemModel = new ItemModel();
         public BinarySummatorViewModel()
         {
-            GetResCommand = new Command(GetResult);
+            ComputeResultCommand = new Command(ComputeResult);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -24,30 +22,30 @@ namespace LearnMVVM.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
-        public void GetResult()
+        public void ComputeResult()
         {
-            result.getAsSumOf(itemA, itemB);
+            itemModel.getSumOf(itemModel.itemA, itemModel.itemB);
             OnPropertyChanged();
             OnPropertyChanged(nameof(DisplayMessage));
         }
 
         public int ItemAValue
         {
-            get { return itemA.getValue(); }
-            set { itemA.setValue(value); }
+            get { return itemModel.itemA.getValue(); }
+            set { itemModel.itemA.setValue(value); }
         }
 
         public int ItemBValue
         {
-            get { return itemB.getValue(); }
-            set { itemB.setValue(value); }
+            get { return itemModel.itemB.getValue(); }
+            set { itemModel.itemB.setValue(value); }
         }
 
         public string DisplayMessage
         {
-            get { return $"The sum of A and B is: {result.getValue()}"; }
+            get { return $"The sum of A and B is: {itemModel.result.getValue()}"; }
         }
 
-        public Command GetResCommand { get; }
+        public Command ComputeResultCommand { get; }
     }
 }

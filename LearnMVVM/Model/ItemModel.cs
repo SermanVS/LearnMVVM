@@ -6,26 +6,19 @@ namespace LearnMVVM.Model
 {
     class ItemModel
     {
-        private int value;
-       
-        public ItemModel(int _value = 0)
-        {
-            this.setValue(_value);
-        }
+        public Item itemA;
+        public Item itemB;
+        public Item result;
 
-        public int getValue()
+        public ItemModel(int _valueA = 0, int _valueB = 0)
         {
-            return value;
+            itemA = new Item(_valueA);
+            itemB = new Item(_valueB);
+            result = new Item(_valueA + _valueB);
         }
-        public void setValue(int _value)
+        public void getSumOf(Item itemA, Item itemB)
         {
-            this.value = _value;
-        }
-        
-        public ItemModel getAsSumOf(ItemModel valueA, ItemModel valueB)
-        {
-            this.setValue(valueA.getValue() + valueB.getValue());
-            return this;
+            result.setValue(itemA.getValue() + itemB.getValue());
         }
     }
 }
