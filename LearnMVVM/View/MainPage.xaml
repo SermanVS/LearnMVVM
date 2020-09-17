@@ -8,10 +8,10 @@
     
     <StackLayout Padding="10" Spacing="10">
             <Label Text="Value A" />
-            <Entry Text="{Binding ItemAValue}" Placeholder="0" />
+            <Entry Text="{Binding itemA}" Placeholder="0" />
 
             <Label Text="Value B" />
-            <Entry Text="{Binding ItemBValue}" Placeholder="0" />
+            <Entry Text="{Binding itemB}" Placeholder="0" />
 
             <Label Text="{Binding DisplayMessage}"/>
 
